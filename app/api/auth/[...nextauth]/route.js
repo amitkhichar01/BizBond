@@ -43,6 +43,9 @@ export const authOptions = NextAuth({
             },
         }),
     ],
+    pages: {
+        signOut: "https://bizbond.onrender.com", // Change this to your actual home URL
+    },
     secret: process.env.NEXTAUTH_SECRET,
 });
 
