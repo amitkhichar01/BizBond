@@ -29,12 +29,12 @@ const SignupForm = ({ formRef, setIsVisible, isVisible }) => {
 
             // Hash password
             const hashedPassword = await hashPassword(password);
+
             // Call the signup API
             const response = await axios.post("/api/signup", {
                 ...data,
                 password: hashedPassword,
             });
-
 
             // Sign in after successful signup
             const result = await signIn("credentials", {
@@ -43,7 +43,6 @@ const SignupForm = ({ formRef, setIsVisible, isVisible }) => {
                 password,
             });
             setIsVisible(!isVisible);
-
         } catch (error) {
             console.error("Error during sign up:", error);
             if (error.response?.data?.message.includes("Email")) {
@@ -59,7 +58,7 @@ const SignupForm = ({ formRef, setIsVisible, isVisible }) => {
         }
     };
 
-    if(message){
+    if (message) {
         setTimeout(() => {
             setMessage(null);
         }, 7000);
