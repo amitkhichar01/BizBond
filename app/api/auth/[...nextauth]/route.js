@@ -43,6 +43,7 @@ export const authOptions = NextAuth({
             },
         }),
     ],
+
     secret: process.env.NEXTAUTH_SECRET,
 });
 
