@@ -110,6 +110,7 @@ const PostPage = ({ params }) => {
                                     height={100}
                                     alt={post.author.name}
                                     className="object-fill w-14 h-14 rounded mr-4 mt-[5px]"
+                                    priority
                                 />
                             </Link>
 
@@ -123,7 +124,7 @@ const PostPage = ({ params }) => {
                         </div>
                         <div className="min-h-20">
                             <p className="mb-5 text-md sm:text-lg indent-4">{post.content}</p>
-                            {post.image_url && <Image src={post.image_url} width={1980} height={1080} alt="Post image" className="object-fill w-full h-[60vh] rounded-md" />}
+                            {post.image_url && <Image src={post.image_url} width={1980} height={1080} alt="Post image" className="object-fill w-full h-[60vh] rounded-md" priority />}
                         </div>
                     </div>
                     <hr className="mx-4 " />
@@ -182,6 +183,7 @@ const PostPage = ({ params }) => {
                                             height={100}
                                             alt="Post image"
                                             className="object-fill rounded w-10 h-10"
+                                            priority
                                         />
                                     </Link>
 
@@ -216,6 +218,7 @@ const PostPage = ({ params }) => {
                                                         height={100}
                                                         alt="Post image"
                                                         className="object-fill rounded w-10 h-10 self-center"
+                                                        priority
                                                     />
                                                 </Link>
 

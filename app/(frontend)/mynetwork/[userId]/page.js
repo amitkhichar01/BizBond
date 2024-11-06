@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React ,{ useEffect, useState } from "react";
 import { useRouter, useSearchParams, notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Loader from "../../components/Loader";
@@ -8,9 +8,10 @@ import FollowingSection from "../../components/FollowingSection";
 import { fetchUserFollowers, fetchUserFollowing } from "@/utils/apiUtils";
 
 const UserProfile = ({ params }) => {
-    const { userId } = params;
+    const { userId } = React.use(params);
     const searchParams = useSearchParams();
     const router = useRouter();
+
     const [isLoading, setIsLoading] = useState(true);
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
@@ -21,14 +22,11 @@ const UserProfile = ({ params }) => {
         const fetchList = async () => {
             setIsLoading(true);
             if (section === "followers") {
-                
                 const data = await fetchUserFollowers(userId);
 
                 setFollowers(data.followers);
                 setNetworkUser(data.networkUser);
-
             } else if (section === "following") {
-
                 const data = await fetchUserFollowing(userId);
 
                 setFollowing(data.following);

@@ -23,7 +23,7 @@ const authOptions = {
 
                 try {
                     await dbConnect();
-                   
+
                     const user = await User.findOne({ email });
 
                     if (!user) {
@@ -51,7 +51,6 @@ const authOptions = {
     callbacks: {
         async jwt({ token, user, account, profile, isNewUser }) {
             if (account?.provider === "google" && profile) {
-
                 await dbConnect();
 
                 let existingUser = await User.findOne({ email: profile.email });
@@ -61,23 +60,19 @@ const authOptions = {
                         email: profile.email,
                         name: profile.name,
                         profile_url: profile.picture,
-                        // Add any other fields you want to store
                     });
                 } else {
                     existingUser.name = profile.name;
                     existingUser.profile_url = profile.picture;
-                    // Update other fields if needed
+
                     await existingUser.save();
                 }
 
                 token.id = existingUser._id;
                 token.profile_url = existingUser.profile_url;
-
             } else if (user) {
-
                 token.id = user._id;
                 token.profile_url = user.profile_url;
-                
             }
             return token;
         },

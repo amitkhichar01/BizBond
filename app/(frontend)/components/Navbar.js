@@ -50,8 +50,7 @@ const Navbar = () => {
                         Biz<span className="text-blue-500">Bond</span>
                     </Link>
                     <div className="hidden sm:inline">
-
-                    <Search />
+                        <Search />
                     </div>
                 </div>
 
@@ -102,7 +101,8 @@ const Navbar = () => {
                                         height={100}
                                         alt="User Image"
                                         className="rounded w-9 h-9"
-                                    ></Image>
+                                        priority
+                                    />
                                 ) : (
                                     <svg className="w-10 h-10 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                         <path

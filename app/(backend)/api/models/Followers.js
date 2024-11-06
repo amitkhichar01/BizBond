@@ -8,4 +8,4 @@ const FollowerSchema = new mongoose.Schema({
 
 const Follower = mongoose.models.Follower || mongoose.model("Follower", FollowerSchema);
 
-module.exports = Follower;
+export default Follower;

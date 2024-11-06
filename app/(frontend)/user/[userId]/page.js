@@ -14,7 +14,7 @@ import ExperienceSection from "../../components/ExperienceSection";
 import PostSection from "../../components/PostSection";
 import Loader from "../../components/Loader";
 
-const UserProfile = ({ params }) => {
+const UserProfile =  ({params}) => {
     const { userId } = params;
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);

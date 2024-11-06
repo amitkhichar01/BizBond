@@ -18,6 +18,7 @@ const FollowingSection = ({ followers }) => {
                             height={100}
                             alt={user.follower_id?.name || "Profile image"}
                             className="object-fill w-14 h-14 rounded-full mr-4 mt-[5px]"
+                            priority
                         />
                     </Link>
 

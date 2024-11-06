@@ -2,9 +2,9 @@ import dbConnect from "@/app/(backend)/api/middleware/dbConnect";
 import Follower from "@/app/(backend)/api/models/Followers";
 import User from "@/app/(backend)/api/models/User";
 
-export async function GET(req, { params }) {
+export async function GET({ params }) {
     try {
-        const { userId } = params;
+        const { userId } = await params;
 
         await dbConnect();
 
