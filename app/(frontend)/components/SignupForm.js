@@ -32,7 +32,7 @@ const SignupForm = ({ formRef, setIsVisible, isVisible }) => {
                 ...data,
                 password: hashedPassword,
             });
-
+            
             // Sign in after successful signup
             const result = await signIn("credentials", {
                 redirect: false,

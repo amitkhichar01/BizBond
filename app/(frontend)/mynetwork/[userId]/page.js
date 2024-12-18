@@ -8,15 +8,15 @@ import FollowingSection from "../../components/FollowingSection";
 import { fetchUserFollowers, fetchUserFollowing } from "@/utils/apiUtils";
 
 const UserProfile = ({ params }) => {
-    const { userId } = React.use(params);
-    const searchParams = useSearchParams();
     const router = useRouter();
+    const { userId } = params;
+    const searchParams = useSearchParams();
 
     const [isLoading, setIsLoading] = useState(true);
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
     const [networkUser, setNetworkUser] = useState();
-    const [section, setSection] = useState(searchParams.get("section"));
+    const [section, setSection] = useState(searchParams.get("section") || "followers");
 
     useEffect(() => {
         const fetchList = async () => {

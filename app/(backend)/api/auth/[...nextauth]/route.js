@@ -19,11 +19,10 @@ const authOptions = {
                 password: { label: "Password", type: "password" },
             },
             authorize: async (credentials) => {
-                const { email, password } = credentials;
+                const { email, password } = credentials;               
 
                 try {
                     await dbConnect();
-
                     const user = await User.findOne({ email });
 
                     if (!user) {

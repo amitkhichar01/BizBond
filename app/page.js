@@ -36,22 +36,18 @@ export default function Posts() {
         }
     }, [session]);
 
-    // Fetch posts data
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                axios.get("/api/posts").then((res) => {
-                    
-                    setPosts(res.data);
-
-                    setIsLoading(false);
-                });
+                const res = await axios.get("/api/posts");
+                setPosts(res.data);
             } catch (error) {
                 setError(error.message);
-                setIsLoading(false);
+            } finally {
+                setIsLoading(false); // Ensure loading stops even if an error occurs
             }
         };
-
+    
         fetchPosts();
     }, []);
 
