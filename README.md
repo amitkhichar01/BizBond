@@ -38,3 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 =======
 # BizBond
 >>>>>>> origin/main
+
+
+hope you understand
