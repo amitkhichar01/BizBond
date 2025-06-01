@@ -1,5 +1,6 @@
 import dbConnect from "@/app/(backend)/api/middleware/dbConnect";
 import Post from "@/app/(backend)/api/models/Post";
+import User from "@/app/(backend)/api/models/User"; 
 
 export async function POST(req) {
     try {
